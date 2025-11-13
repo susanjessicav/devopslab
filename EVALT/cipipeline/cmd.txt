@@ -1,0 +1,20 @@
+login to dockerhub.com -> repos -> (image will appear here)
+PWD : URK22Cs1@68      -> account settings -> personal access tokens -> get token(copy)
+
+go to ur repo -> settings -> secrets -> set token and pwd
+
+python app.py
+pytest -q OR python -m pytest -q
+docker build -t susan03/python-ci-lab:local .
+docker run --rm susan03/python-ci-lab:local
+
+
+git init
+git add .
+git commit -m "initial commit"
+git branch -M main
+git remote add origin https://github.com/susanjessicav/devopslab.git
+git push -u origin main
+
+git tag v1
+git push origin v1
