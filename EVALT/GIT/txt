@@ -1,0 +1,23 @@
+git init
+
+git clone https://github.com/susanjessicav/devopslab.git
+
+git add .
+
+git commit -m "first commit"
+
+git status
+
+git log
+
+git branch feature/new-feature
+git checkout feature/new-feature
+
+git checkout -b bugfix/fix-login
+
+git merge feature/new-feature
+
+git remote add origin https://github.com/susanjessicav/devopslab.git
+
+git push -u origin master
+git pull origin master
