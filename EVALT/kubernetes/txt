@@ -1,0 +1,29 @@
+choco install kubernetes-cli
+choco install minikube
+minikube start --driver=docker
+minikube status
+kubectl get nodes
+
+
+kubectl apply -f nginx-pod.yaml
+kubectl get pods
+kubectl describe pod nginx-pod
+kubectl port-forward pod/nginx-pod 8080:80  -- open localhost
+kubectl delete pod nginx-pod
+
+
+kubectl create deployment my-nginx --image=nginx
+kubectl get deployments
+kubectl get pods -l app=my-nginx
+kubectl scale deployment my-nginx --replicas=3
+kubectl get pods
+kubectl set image deployment/my-nginx nginx=nginx:1.25
+kubectl rollout status deployment/my-nginx
+
+kubectl expose deployment my-nginx --type=NodePort --port=80
+kubectl get svc
+minikube service my-nginx --url  --open url
+
+kubectl delete svc my-nginx
+kubectl delete deployment my-nginx
+kubectl get all
