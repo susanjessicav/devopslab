@@ -1,0 +1,11 @@
+python app.py
+pytest -q OR python -m pytest -q
+docker build -t susan03/python-ci-lab:local .
+docker run --rm susan03/python-ci-lab:local
+
+git init
+git add .
+git commit -m "initial commit"
+git branch -M main
+git remote add origin https://github.com/susanjessicav/devopslab.git
+git push -u orgin main
